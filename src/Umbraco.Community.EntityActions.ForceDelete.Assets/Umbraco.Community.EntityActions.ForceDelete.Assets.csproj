@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Umbraco.Community.EntityActions.ForceDelete.Assets</PackageId>
+    <RootNamespace>Umbraco.Community.EntityActions.ForceDelete.Assets</RootNamespace>
+    <AssemblyName>Umbraco.Community.EntityActions.ForceDelete.Assets</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="App_Plugins\**\*" />
+  </ItemGroup>
+
+</Project>

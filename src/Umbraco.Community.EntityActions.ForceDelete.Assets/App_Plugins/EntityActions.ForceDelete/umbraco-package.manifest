@@ -1,0 +1,7 @@
+{
+  "$schema": "https://docs.umbraco.com/umbraco-cms/extending/umbraco-package-manifest",
+  "name": "EntityActions.ForceDelete",
+  "version": "1.0.0",
+  "allowPublicAccess": false,
+  "extensions": []
+}
