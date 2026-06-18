@@ -1,0 +1,50 @@
+name: Publish NuGet Packages
+
+on:
+  push:
+    tags:
+      - '*' 
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore ForceDelete
+        run: dotnet restore ./src/Umbraco.Community.EntityActions.ForceDelete/Umbraco.Community.EntityActions.ForceDelete.csproj
+      
+      - name: Restore ForceDelete.Assets
+        run: dotnet restore ./src/Umbraco.Community.EntityActions.ForceDelete.Assets/Umbraco.Community.EntityActions.ForceDelete.Assets.csproj
+
+      - name: Build ForceDelete
+        run: dotnet build ./src/Umbraco.Community.EntityActions.ForceDelete/Umbraco.Community.EntityActions.ForceDelete.csproj --configuration Release --no-restore
+
+      - name: Build ForceDelete.Assets
+        run: dotnet build ./src/Umbraco.Community.EntityActions.ForceDelete.Assets/Umbraco.Community.EntityActions.ForceDelete.Assets.csproj --configuration Release --no-restore
+
+      - name: Pack ForceDelete
+        run: dotnet pack ./src/Umbraco.Community.EntityActions.ForceDelete/Umbraco.Community.EntityActions.ForceDelete.csproj --configuration Release --no-build --output ./nupkg
+
+      - name: Pack ForceDelete.Assets
+        run: dotnet pack ./src/Umbraco.Community.EntityActions.ForceDelete.Assets/Umbraco.Community.EntityActions.ForceDelete.Assets.csproj --configuration Release --no-build --output ./nupkg
+      
+      - name: NuGet login
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
+      - name: Push all .nupkg files to NuGet
+        run: dotnet nuget push ./nupkg/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --skip-duplicate
