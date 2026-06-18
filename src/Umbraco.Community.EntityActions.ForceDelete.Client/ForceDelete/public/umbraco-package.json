@@ -1,0 +1,12 @@
+{
+  "name": "Force Delete",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "Force Delete Bundle",
+      "alias": "Umb.Community.EntityActions.ForceDelete.Bundle",
+      "type": "bundle",
+      "js": "/App_Plugins/ForceDelete/force-delete.js"
+    }
+  ]
+}

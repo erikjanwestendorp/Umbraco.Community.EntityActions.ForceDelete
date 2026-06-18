@@ -1,0 +1,1 @@
+{"version":3,"file":"en-DDSyGyva.js","names":[],"sources":["../../Umbraco.Community.EntityActions.ForceDelete.Client/ForceDelete/src/localization/en.ts"],"sourcesContent":["export default {\r\n    actionCategories: {\r\n        community: 'Community',\r\n    },\r\n};\r\n"],"mappings":";AAAA,IAAA,IAAe,EACX,kBAAkB,EACd,WAAW,YACf,EACJ"}
