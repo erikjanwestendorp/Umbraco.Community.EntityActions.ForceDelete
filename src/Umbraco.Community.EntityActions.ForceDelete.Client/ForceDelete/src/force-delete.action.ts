@@ -26,14 +26,12 @@ export class ForceDeleteEntityAction extends UmbEntityActionBase<never> {
         cancelLabel: 'Annuleren',
       });
     } catch {
-      console.log('delete cancelled');
       return;
     }
 
     const token = await this.#authContext?.getLatestToken();
 
     if (!token) {
-      console.error('No auth token available');
       return;
     }
 
