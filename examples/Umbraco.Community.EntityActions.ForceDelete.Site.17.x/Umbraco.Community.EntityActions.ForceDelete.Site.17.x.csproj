@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Umbraco.Community.EntityActions.ForceDelete\Umbraco.Community.EntityActions.ForceDelete.csproj" />
-    <ProjectReference Include="..\..\src\Umbraco.Community.EntityActions.ForceDelete.Assets\Umbraco.Community.EntityActions.ForceDelete.Assets.csproj" />
   </ItemGroup>
 
 </Project>
