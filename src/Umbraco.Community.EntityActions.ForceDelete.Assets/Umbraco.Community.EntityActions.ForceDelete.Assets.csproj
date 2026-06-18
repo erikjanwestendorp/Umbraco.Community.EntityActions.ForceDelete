@@ -1,13 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
 
-  <PropertyGroup>
-    <PackageId>Umbraco.Community.EntityActions.ForceDelete.Assets</PackageId>
-    <RootNamespace>Umbraco.Community.EntityActions.ForceDelete.Assets</RootNamespace>
-    <AssemblyName>Umbraco.Community.EntityActions.ForceDelete.Assets</AssemblyName>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<StaticWebAssetBasePath>App_Plugins/ForceDelete</StaticWebAssetBasePath>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<PackageId>Umbraco.Community.EntityActions.ForceDelete.Assets</PackageId>
+		<RootNamespace>Umbraco.Community.EntityActions.ForceDelete.Assets</RootNamespace>
+		<AssemblyName>Umbraco.Community.EntityActions.ForceDelete.Assets</AssemblyName>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Include="App_Plugins\**\*" />
-  </ItemGroup>
 
 </Project>
