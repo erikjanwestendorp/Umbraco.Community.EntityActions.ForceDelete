@@ -18,7 +18,7 @@ var e = [
 		kind: "default",
 		alias: "Umb.Community.ForceDelete.Action",
 		name: "Force Delete",
-		api: () => import("./force-delete.action-CvHp31rR.js"),
+		api: () => import("./force-delete.action-Be9riZib.js"),
 		forEntityTypes: ["document"],
 		meta: {
 			label: "Force Delete",

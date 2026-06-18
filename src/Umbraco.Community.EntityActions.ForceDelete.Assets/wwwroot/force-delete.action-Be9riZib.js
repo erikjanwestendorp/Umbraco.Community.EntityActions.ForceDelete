@@ -19,14 +19,10 @@ var r = class extends e {
 				cancelLabel: "Annuleren"
 			});
 		} catch {
-			console.log("delete cancelled");
 			return;
 		}
 		let e = await this.#e?.getLatestToken();
-		if (!e) {
-			console.error("No auth token available");
-			return;
-		}
+		if (!e) return;
 		let t = await fetch(`/umbraco/management/api/v1/document/${this.args.unique}`, {
 			method: "DELETE",
 			headers: {
@@ -44,4 +40,4 @@ var r = class extends e {
 //#endregion
 export { r as ForceDeleteEntityAction, r as api };
 
-//# sourceMappingURL=force-delete.action-CvHp31rR.js.map
+//# sourceMappingURL=force-delete.action-Be9riZib.js.map
