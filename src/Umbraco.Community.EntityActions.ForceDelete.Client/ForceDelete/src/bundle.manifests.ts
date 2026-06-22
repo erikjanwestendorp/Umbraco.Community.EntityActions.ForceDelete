@@ -35,17 +35,26 @@ export const manifests: Array<UmbExtensionManifest> = [
     alias: 'Umb.Community.ForceDelete.Localization.En',
     name: 'English',
     meta: {
+      culture: 'en',
+    },
+    js: () => import('./localization/en.js'),
+  },
+  {
+    type: 'localization',
+    alias: 'Umb.Community.ForceDelete.Localization.EnUs',
+    name: 'English (US)',
+    meta: {
       culture: 'en-US',
     },
     js: () => import('./localization/en.js'),
   },
   {
-  type: 'localization',
-  alias: 'Umb.Community.ForceDelete.Localization.Nl',
-  name: 'Dutch',
-  meta: {
-    culture: 'nl-NL',
-  },
-  js: () => import('./localization/nl.js'),
+    type: 'localization',
+    alias: 'Umb.Community.ForceDelete.Localization.Nl',
+    name: 'Dutch',
+    meta: {
+      culture: 'nl-NL',
+    },
+    js: () => import('./localization/nl.js'),
 }
 ];

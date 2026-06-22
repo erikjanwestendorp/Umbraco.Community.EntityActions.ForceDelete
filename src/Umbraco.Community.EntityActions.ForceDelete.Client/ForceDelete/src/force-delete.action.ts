@@ -1,12 +1,14 @@
 import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
 import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
 import { umbConfirmModal } from '@umbraco-cms/backoffice/modal';
+import { UmbLocalizationController } from '@umbraco-cms/backoffice/localization-api';
 
 import type { UmbEntityActionArgs } from '@umbraco-cms/backoffice/entity-action';
 import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
 
 export class ForceDeleteEntityAction extends UmbEntityActionBase<never> {
   #authContext: any;
+  #localize = new UmbLocalizationController(this);
 
   constructor(host: UmbControllerHost, args: UmbEntityActionArgs<never>) {
     super(host, args);
@@ -19,11 +21,11 @@ export class ForceDeleteEntityAction extends UmbEntityActionBase<never> {
   override async execute() {
     try {
       await umbConfirmModal(this, {
-        headline: 'Force Delete',
-        content: 'Weet je zeker dat je dit item permanent wilt verwijderen?',
+        headline: this.#localize.term('forceDelete_headline'),
+        content: this.#localize.term('forceDelete_content'),
         color: 'danger',
-        confirmLabel: 'Force Delete',
-        cancelLabel: 'Annuleren',
+        confirmLabel: this.#localize.term('forceDelete_confirmLabel'),
+        cancelLabel: this.#localize.term('forceDelete_cancelLabel'),
       });
     } catch {
       return;
