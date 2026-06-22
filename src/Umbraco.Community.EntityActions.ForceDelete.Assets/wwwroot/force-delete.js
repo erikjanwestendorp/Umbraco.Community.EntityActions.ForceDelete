@@ -22,7 +22,7 @@ var e = [
 		forEntityTypes: ["document"],
 		meta: {
 			label: "Force Delete",
-			icon: "icon-trash"
+			icon: "icon-delete"
 		},
 		conditions: [{
 			alias: "Umb.Condition.UserPermission.Document",
