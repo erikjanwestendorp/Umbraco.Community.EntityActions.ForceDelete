@@ -21,7 +21,7 @@ export const manifests: Array<UmbExtensionManifest> = [
     forEntityTypes: ['document'],
     meta: {
       label: 'Force Delete',
-      icon: 'icon-trash',
+      icon: 'icon-delete',
     },
     conditions: [
       {
