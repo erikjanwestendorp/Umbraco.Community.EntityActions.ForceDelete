@@ -18,7 +18,7 @@ var e = [
 		kind: "default",
 		alias: "Umb.Community.ForceDelete.Action",
 		name: "Force Delete",
-		api: () => import("./force-delete.action-Be9riZib.js"),
+		api: () => import("./force-delete.action-kv5BaqKG.js"),
 		forEntityTypes: ["document"],
 		meta: {
 			label: "Force Delete",
@@ -33,15 +33,22 @@ var e = [
 		type: "localization",
 		alias: "Umb.Community.ForceDelete.Localization.En",
 		name: "English",
+		meta: { culture: "en" },
+		js: () => import("./en-SzV39bfb.js")
+	},
+	{
+		type: "localization",
+		alias: "Umb.Community.ForceDelete.Localization.EnUs",
+		name: "English (US)",
 		meta: { culture: "en-US" },
-		js: () => import("./en-DDSyGyva.js")
+		js: () => import("./en-SzV39bfb.js")
 	},
 	{
 		type: "localization",
 		alias: "Umb.Community.ForceDelete.Localization.Nl",
 		name: "Dutch",
 		meta: { culture: "nl-NL" },
-		js: () => import("./nl-CFPoBh1F.js")
+		js: () => import("./nl-B5nGvRTm.js")
 	}
 ];
 //#endregion
