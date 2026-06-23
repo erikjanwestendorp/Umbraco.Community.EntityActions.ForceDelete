@@ -1,20 +1,22 @@
-import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
-import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
+import { UmbEntityActionBase, UmbRequestReloadStructureForEntityEvent} from '@umbraco-cms/backoffice/entity-action';
 import { umbConfirmModal } from '@umbraco-cms/backoffice/modal';
 import { UmbLocalizationController } from '@umbraco-cms/backoffice/localization-api';
+import { DocumentService } from '@umbraco-cms/backoffice/external/backend-api';
+import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
+import { UMB_ACTION_EVENT_CONTEXT } from '@umbraco-cms/backoffice/action';
 
-import type { UmbEntityActionArgs } from '@umbraco-cms/backoffice/entity-action';
+import type { UmbEntityActionArgs  } from '@umbraco-cms/backoffice/entity-action';
 import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
 
 export class ForceDeleteEntityAction extends UmbEntityActionBase<never> {
-  #authContext: any;
   #localize = new UmbLocalizationController(this);
+  #notificationContext?: typeof UMB_NOTIFICATION_CONTEXT.TYPE;
 
   constructor(host: UmbControllerHost, args: UmbEntityActionArgs<never>) {
     super(host, args);
 
-    this.consumeContext(UMB_AUTH_CONTEXT, (ctx) => {
-      this.#authContext = ctx;
+    this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
+      this.#notificationContext = instance;
     });
   }
 
@@ -31,26 +33,46 @@ export class ForceDeleteEntityAction extends UmbEntityActionBase<never> {
       return;
     }
 
-    const token = await this.#authContext?.getLatestToken();
+    const unique = this.args.unique!;
 
-    if (!token) {
-      return;
+ 
+    try {
+      await DocumentService.deleteDocumentById({
+        path: {
+          id: unique!,
+        },
+      });
+
+      const entityType = 'document';
+
+      const eventContext = await this.getContext(UMB_ACTION_EVENT_CONTEXT);
+
+      if (!eventContext) {
+			  throw new Error('Event context is missing');
+		  }
+    
+      const structureEvent = new UmbRequestReloadStructureForEntityEvent({ unique, entityType });
+      eventContext.dispatchEvent(structureEvent);
+
+
+      this.#notificationContext?.peek('positive', {
+        data: {
+          headline: this.#localize.term('forceDelete_notificationSuccessHeadline'),
+          message: this.#localize.term('forceDelete_notificationSuccessMessage'),
+        },
+      });
+
+    } catch (error) {
+
+      this.#notificationContext?.peek('danger', {
+        data: {
+          headline: this.#localize.term('forceDelete_notificationFailedHeadline'),
+          message: this.#localize.term('forceDelete_notificationFailedMessage'),
+        },
+      });
+
     }
 
-    const response = await fetch(`/umbraco/management/api/v1/document/${this.args.unique}`, {
-      method: 'DELETE',
-      headers: {
-        Accept: '*/*',
-        Authorization: `Bearer ${token}`,
-      },
-    });
-
-    if (!response.ok) {
-      console.error('Force delete failed', response.status, await response.text());
-      return;
-    }
-
-    console.log('deleted');
   }
 }
 

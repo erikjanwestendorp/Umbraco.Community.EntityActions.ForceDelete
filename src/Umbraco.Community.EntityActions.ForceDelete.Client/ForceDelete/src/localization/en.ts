@@ -7,5 +7,9 @@ export default {
         content: 'Are you sure you want to permanently delete this item?',
         confirmLabel: 'Delete',
         cancelLabel: 'Cancel',
+        notificationSuccessHeadline: 'Success',
+        notificationSuccessMessage: 'The action was successfully executed',
+        notificationFailedHeadline: 'Failed',
+        notificationFailedMessage: 'TThe action failed to execute',
     },
 };
