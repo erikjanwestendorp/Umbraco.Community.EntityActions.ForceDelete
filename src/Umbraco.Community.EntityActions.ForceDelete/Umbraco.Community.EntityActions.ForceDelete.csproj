@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<Version>17.0.0-beta4</Version>
+		<Version>17.0.0-rc1</Version>
 		<PackageId>Umbraco.Community.EntityActions.ForceDelete</PackageId>
 		<Product>Umbraco.Community.EntityActions.ForceDelete</Product>
 		<Title>Umbraco.Community.EntityActions.ForceDelete</Title>
@@ -10,8 +10,17 @@
 		<PackageTags>umbraco plugin package force delete document</PackageTags>
 		<PackageProjectUrl>https://github.com/erikjanwestendorp/Umbraco.Community.EntityActions.ForceDelete</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/erikjanwestendorp/Umbraco.Community.EntityActions.ForceDelete</RepositoryUrl>
+		<PackageIcon>force-delete-icon-128.png</PackageIcon>
 		<RepositoryType>git</RepositoryType>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\assets\force-delete-icon-128.png" Pack="true" PackagePath="\" />
+		<None Include="README.md" Pack="true" PackagePath="\" />
+		<None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
+	</ItemGroup>
 
 
 	<ItemGroup>
@@ -21,7 +30,7 @@
 
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Umbraco.Community.EntityActions.ForceDelete.Assets\Umbraco.Community.EntityActions.ForceDelete.Assets.csproj" />
+		<ProjectReference Include="..\Umbraco.Community.EntityActions.ForceDelete.Assets\Umbraco.Community.EntityActions.ForceDelete.Assets.csproj" />
 	</ItemGroup>
 
 </Project>
