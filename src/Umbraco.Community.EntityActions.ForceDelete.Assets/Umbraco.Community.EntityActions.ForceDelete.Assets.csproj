@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>17.0.0-beta4</Version>
+		<Version>17.0.0-rc1</Version>
 		<PackageId>Umbraco.Community.EntityActions.ForceDelete.Assets</PackageId>
 		<Product>Umbraco.Community.EntityActions.ForceDelete.Assets</Product>
 		<Title>Umbraco.Community.EntityActions.ForceDelete.Assets</Title>
@@ -17,7 +17,12 @@
 		<PackageTags>umbraco plugin package force delete document</PackageTags>
 		<PackageProjectUrl>https://github.com/erikjanwestendorp/Umbraco.Community.EntityActions.ForceDelete</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/erikjanwestendorp/Umbraco.Community.EntityActions.ForceDelete</RepositoryUrl>
+		<PackageIcon>heading-icon-128.png</PackageIcon>
 		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\assets\heading-icon-128.png" Pack="true" PackagePath="\" />
+	</ItemGroup>
 
 </Project>
