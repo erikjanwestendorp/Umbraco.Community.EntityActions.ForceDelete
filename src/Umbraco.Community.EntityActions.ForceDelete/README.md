@@ -54,11 +54,11 @@ After installation, supported entities in the backoffice will receive an additio
 Example:
 
 ```text
-Content Node
- ├─ Edit
- ├─ Move
- ├─ Copy
- ├─ Delete
+Document
+ ├─ Create
+ ├─ Trash
+ ├─ Move to
+ ├─ Publish
  └─ Force Delete   ← Added by this package
 ```
 
