@@ -22,7 +22,7 @@
     "LicenseTypes": [ "Free" ],
     "PackageType": "Package",
     "IssueTrackerUrl": "https://github.com/erikjanwestendorp/Umbraco.Community.PropertyEditors.Heading/issues",
-    "Title": "Heading",
+    "Title": "ForceDelete",
     "Description": "Add a Force Delete entity action to the Umbraco backoffice, allowing developers and editors to permanently remove documents.",
     "Tags": ["Developer Tools", "Editor Tools"]
 }
