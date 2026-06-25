@@ -1,1 +1,1 @@
-# UmbracoPackageTemplate
+# Umbraco.Community.EntityActions.ForceDelete
