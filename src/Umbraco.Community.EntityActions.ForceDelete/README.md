@@ -64,6 +64,8 @@ Document
 
 Selecting **Force Delete** will bypass the default delete restrictions and permanently remove the selected entity.
 
+**Note:** The **Force Delete** action is only visible for users whose user group has the **Force Delete** permission enabled under **Document Permissions**.
+
 ---
 
 ## Important notice

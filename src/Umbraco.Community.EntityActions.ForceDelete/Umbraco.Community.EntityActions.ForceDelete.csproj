@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<Version>17.0.0-rc1</Version>
+		<Version>17.0.0</Version>
 		<PackageId>Umbraco.Community.EntityActions.ForceDelete</PackageId>
 		<Product>Umbraco.Community.EntityActions.ForceDelete</Product>
 		<Title>Umbraco.Community.EntityActions.ForceDelete</Title>
 		<Description>A Umbraco community package that adds an entity action to force delete documents.</Description>
 		<Authors>Erik-Jan Westendorp</Authors>
-		<PackageTags>umbraco plugin package force delete document</PackageTags>
+		<PackageTags>umbraco-marketplace umbraco plugin package force-delete document</PackageTags>
 		<PackageProjectUrl>https://github.com/erikjanwestendorp/Umbraco.Community.EntityActions.ForceDelete</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/erikjanwestendorp/Umbraco.Community.EntityActions.ForceDelete</RepositoryUrl>
 		<PackageIcon>force-delete-icon-128.png</PackageIcon>
