@@ -6,7 +6,4 @@
     <Project Path="src/Umbraco.Community.EntityActions.ForceDelete.Assets/Umbraco.Community.EntityActions.ForceDelete.Assets.csproj" />
     <Project Path="src/Umbraco.Community.EntityActions.ForceDelete/Umbraco.Community.EntityActions.ForceDelete.csproj" />
   </Folder>
-  <Folder Name="/tests/">
-    <Project Path="tests/Umbraco.Community.EntityActions.ForceDelete.Tests/Umbraco.Community.EntityActions.ForceDelete.Tests.csproj" />
-  </Folder>
 </Solution>
