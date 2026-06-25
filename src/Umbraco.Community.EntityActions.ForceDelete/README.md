@@ -54,15 +54,17 @@ After installation, supported entities in the backoffice will receive an additio
 Example:
 
 ```text
-Content Node
- ├─ Edit
- ├─ Move
- ├─ Copy
- ├─ Delete
+Document
+ ├─ Create
+ ├─ Trash
+ ├─ Move to
+ ├─ Publish
  └─ Force Delete   ← Added by this package
 ```
 
 Selecting **Force Delete** will bypass the default delete restrictions and permanently remove the selected entity.
+
+**Note:** The **Force Delete** action is only visible for users whose user group has the **Force Delete** permission enabled under **Document Permissions**.
 
 ---
 

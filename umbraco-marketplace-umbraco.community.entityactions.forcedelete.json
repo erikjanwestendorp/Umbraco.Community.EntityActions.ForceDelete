@@ -1,0 +1,28 @@
+{
+	"$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+    "AuthorDetails": {
+        "Name": "Erik-Jan Westendorp",
+        "Description": ".NET Developer at ilionx, Umbraco MVP",
+        "Url": "https://github.com/erikjanwestendorp",
+        "ImageUrl": "https://github.com/erikjanwestendorp.png",
+        "SyncContributorsFromRepository": true
+    },
+    "Category": "Editor Tools",
+    "Screenshots": [
+        {
+            "ImageUrl": "https://raw.githubusercontent.com/erikjanwestendorp/Umbraco.Community.EntityActions.ForceDelete/main/assets/entity-action.png",
+            "Caption": "Entity Action"
+        },
+        {
+            "ImageUrl": "https://raw.githubusercontent.com/erikjanwestendorp/Umbraco.Community.EntityActions.ForceDelete/main/assets/document-permission.png",
+            "Caption": "Document Permission"
+        }        
+    ],
+
+    "LicenseTypes": [ "Free" ],
+    "PackageType": "Package",
+    "IssueTrackerUrl": "https://github.com/erikjanwestendorp/Umbraco.Community.PropertyEditors.Heading/issues",
+    "Title": "Heading",
+    "Description": "Add a Force Delete entity action to the Umbraco backoffice, allowing developers and editors to permanently remove documents.",
+    "Tags": ["Developer Tools", "Editor Tools"]
+}
